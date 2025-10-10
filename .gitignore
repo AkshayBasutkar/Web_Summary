@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+*.env
+
+# Vectorstore & Processed Data
+vectorstore/
+data/processed_data.parquet
+data/processed_data.csv
+
+# IDE specific
+.vscode/
+.idea/
+
+data/cache
+data/documents/
+data/outputs/
