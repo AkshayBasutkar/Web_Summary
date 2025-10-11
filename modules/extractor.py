@@ -4,10 +4,7 @@ from config import DOCS_DIR, ALLOWED_EXTENSIONS
 from modules.preprocessor import clean_text, preprocess_text
 from modules.utils import save_text_to_file
 
-# ============================================================
-# 🔹 TEXT EXTRACTION MODULE
-# ============================================================
-
+# TEXT EXTRACTION MODULE
 def get_and_preprocess_text(url: str) -> str:
     """
     Fetches, extracts, and preprocesses main text content from a URL.

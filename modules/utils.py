@@ -4,9 +4,6 @@ from datetime import datetime
 from config import LOGS_DIR, LOG_FILE, DATA_DIR
 from config import DOCUMENTS_DIR, OUTPUTS_DIR
 
-# ============================================================
-# 🔹 LOGGING SETUP
-# ============================================================
 
 logger = logging.getLogger(__name__)
 
@@ -29,9 +26,7 @@ def setup_logging():
     logging.info("🧩 Logging initialized successfully.")
 
 
-# ============================================================
-# 🔹 HELPER FUNCTIONS
-# ============================================================
+
 
 def timestamp() -> str:
     """Returns current timestamp as string."""

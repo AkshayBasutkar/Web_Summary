@@ -1,9 +1,7 @@
 import re
 import logging
 
-# ============================================================
-# 🔹 TEXT PREPROCESSING MODULE
-# ============================================================
+# TEXT PREPROCESSING MODULE
 
 def clean_text(text: str) -> str:
     """

@@ -1,22 +1,26 @@
-# keyword_search.py
-import os
 import logging
 from googleapiclient.discovery import build
-from dotenv import load_dotenv
 
-load_dotenv()
 logger = logging.getLogger(__name__)
 
-CSE_ID = os.getenv("GOOGLE_CSE_ID")
-API_KEY = os.getenv("GOOGLE_API_KEY")
+def get_top_urls_from_keyword(keyword: str, api_key: str, cse_id: str, num_results: int = 10) -> list:
+    """
+    Fetch top URLs from Google Custom Search API for a given keyword.
 
-def get_top_urls_from_keyword(keyword: str, num_results: int = 10) -> list:
-    """Fetch top URLs from Google Custom Search for a keyword."""
+    Args:
+        keyword (str): The keyword or phrase to search for.
+        api_key (str): The Google API key entered by user.
+        cse_id (str): The Custom Search Engine ID entered by user.
+        num_results (int): Number of URLs to fetch (default: 10).
+
+    Returns:
+        list: A list of URLs.
+    """
     try:
-        service = build("customsearch", "v1", developerKey=API_KEY)
-        res = service.cse().list(q=keyword, cx=CSE_ID, num=num_results).execute()
+        service = build("customsearch", "v1", developerKey=api_key)
+        res = service.cse().list(q=keyword, cx=cse_id, num=num_results).execute()
         items = res.get("items", [])
-        urls = [item["link"] for item in items]
+        urls = [item["link"] for item in items if "link" in item]
         logger.info(f"✅ Found {len(urls)} URLs for keyword: {keyword}")
         return urls
     except Exception as e:

@@ -1,3 +1,20 @@
 https://www.bbc.com/news/articles/cly17834524o | detailed
 https://www.bbc.com/news/articles/cly17834524o | concise
 https://www.bbc.com/news/articles/cly17834524o | key_points
+
+
+csx id
+
+b1fd71c797e6043d5
+
+google api
+AIzaSyA7k7eZAzVdsm1cWDGDlk2IQFINiTXMAf8
+
+gemini api
+AIzaSyCiYhn3fmEu1QT3_sPhmA9Vh7UGijs5tG8
+
+
+
+https://www.bbc.com/news/articles/cly17834524o 
+https://www.bbc.com/news/articles/cly17834524o 
+https://www.bbc.com/news/articles/cly17834524o 

@@ -1,113 +1,113 @@
-import streamlit as st
-from modules.utils import setup_logging, save_text_to_file
-from modules.extractor import get_and_preprocess_text, save_extracted_text
-from modules.summarizer import summarize_text
-from keyword_search import get_top_urls_from_keyword
-from config import DEFAULT_SUMMARY_TYPE
+# import streamlit as st
+# from modules.utils import setup_logging, save_text_to_file
+# from modules.extractor import get_and_preprocess_text, save_extracted_text
+# from modules.summarizer import summarize_text
+# from keyword_search import get_top_urls_from_keyword
+# from config import DEFAULT_SUMMARY_TYPE
 
-setup_logging()
-st.set_page_config(page_title="📝 Web Summarizer", layout="wide")
+# setup_logging()
+# st.set_page_config(page_title="📝 Web Summarizer", layout="wide")
 
-# Sidebar for page navigation
-page = st.sidebar.selectbox("Select Page", ["Summarize by URL", "Summarize by Keyword"])
+# # Sidebar for page navigation
+# page = st.sidebar.selectbox("Select Page", ["Summarize by URL", "Summarize by Keyword"])
 
-SUMMARY_OPTIONS = ["concise", "detailed", "key_points"]
+# SUMMARY_OPTIONS = ["concise", "detailed", "key_points"]
 
-# -------------------------------
-# Page 1: Summarize by URL
-# -------------------------------
-if page == "Summarize by URL":
-    st.title("🔹 Summarize by URL")
-    st.write(
-        "Enter URLs and optionally custom instructions for AI summarization. "
-        "Format per line: `URL | summary_type`"
-    )
-    urls_input = st.text_area("Enter URLs", "", height=150)
-    custom_instr = st.text_area("Custom Instructions (Optional)", "", height=50)
-    generate_button = st.button("Generate Summaries (URL)")
+# # -------------------------------
+# # Page 1: Summarize by URL
+# # -------------------------------
+# if page == "Summarize by URL":
+#     st.title("🔹 Summarize by URL")
+#     st.write(
+#         "Enter URLs and optionally custom instructions for AI summarization. "
+#         "Format per line: `URL | summary_type`"
+#     )
+#     urls_input = st.text_area("Enter URLs", "", height=150)
+#     custom_instr = st.text_area("Custom Instructions (Optional)", "", height=50)
+#     generate_button = st.button("Generate Summaries (URL)")
 
-    def parse_urls_with_type(text: str):
-        entries = []
-        for line in text.strip().splitlines():
-            if "|" in line:
-                url_part, type_part = line.split("|", 1)
-                url = url_part.strip()
-                summary_type = type_part.strip().lower()
-                if url and summary_type in SUMMARY_OPTIONS:
-                    entries.append({"url": url, "summary_type": summary_type})
-            else:
-                url = line.strip()
-                if url:
-                    entries.append({"url": url, "summary_type": DEFAULT_SUMMARY_TYPE})
-        return entries
+#     def parse_urls_with_type(text: str):
+#         entries = []
+#         for line in text.strip().splitlines():
+#             if "|" in line:
+#                 url_part, type_part = line.split("|", 1)
+#                 url = url_part.strip()
+#                 summary_type = type_part.strip().lower()
+#                 if url and summary_type in SUMMARY_OPTIONS:
+#                     entries.append({"url": url, "summary_type": summary_type})
+#             else:
+#                 url = line.strip()
+#                 if url:
+#                     entries.append({"url": url, "summary_type": DEFAULT_SUMMARY_TYPE})
+#         return entries
 
-    if generate_button:
-        entries = parse_urls_with_type(urls_input)
-        if not entries:
-            st.error("❌ Please enter at least one valid URL.")
-        else:
-            all_summaries = []
-            for idx, entry in enumerate(entries, start=1):
-                url = entry["url"]
-                summary_type = entry["summary_type"]
+#     if generate_button:
+#         entries = parse_urls_with_type(urls_input)
+#         if not entries:
+#             st.error("❌ Please enter at least one valid URL.")
+#         else:
+#             all_summaries = []
+#             for idx, entry in enumerate(entries, start=1):
+#                 url = entry["url"]
+#                 summary_type = entry["summary_type"]
 
-                with st.expander(f"🔹 URL {idx}: {url} ({summary_type})", expanded=True):
-                    text = get_and_preprocess_text(url)
-                    if not text:
-                        st.error("❌ Extraction failed")
-                        all_summaries.append({"URL": url, "Summary": "Extraction failed"})
-                        continue
+#                 with st.expander(f"🔹 URL {idx}: {url} ({summary_type})", expanded=True):
+#                     text = get_and_preprocess_text(url)
+#                     if not text:
+#                         st.error("❌ Extraction failed")
+#                         all_summaries.append({"URL": url, "Summary": "Extraction failed"})
+#                         continue
 
-                    st.text_area("Extracted Text", text, height=200, key=f"extracted_text_{idx}")
-                    save_extracted_text(text, filename=f"extracted_article_{idx}")
+#                     st.text_area("Extracted Text", text, height=200, key=f"extracted_text_{idx}")
+#                     save_extracted_text(text, filename=f"extracted_article_{idx}")
 
-                    summary = summarize_text(text, summary_type, custom_instr)
-                    st.text_area("Summary", summary, height=150, key=f"summary_text_{idx}")
-                    save_text_to_file(summary, prefix=f"summary_{idx}")
-                    all_summaries.append({"URL": url, "Summary": summary})
+#                     summary = summarize_text(text, summary_type, custom_instr)
+#                     st.text_area("Summary", summary, height=150, key=f"summary_text_{idx}")
+#                     save_text_to_file(summary, prefix=f"summary_{idx}")
+#                     all_summaries.append({"URL": url, "Summary": summary})
 
-            if all_summaries:
-                combined_text = "\n\n".join([f"URL: {s['URL']}\nSummary: {s['Summary']}\n{'-'*80}" for s in all_summaries])
-                st.download_button("📥 Download All Summaries", combined_text, "all_summaries.txt", "text/plain")
+#             if all_summaries:
+#                 combined_text = "\n\n".join([f"URL: {s['URL']}\nSummary: {s['Summary']}\n{'-'*80}" for s in all_summaries])
+#                 st.download_button("📥 Download All Summaries", combined_text, "all_summaries.txt", "text/plain")
 
-# -------------------------------
-# Page 2: Summarize by Keyword
-# -------------------------------
-if page == "Summarize by Keyword":
-    st.title("🔹 Summarize by Keyword")
-    st.write(
-        "Enter a keyword and optionally custom instructions for summarization. "
-        "The app will summarize top 10 search results."
-    )
-    keyword = st.text_input("Enter Keyword")
-    custom_instr_kw = st.text_area("Custom Instructions (Optional)", "", height=50)
-    generate_kw_btn = st.button("Generate Summaries (Keyword)")
+# # -------------------------------
+# # Page 2: Summarize by Keyword
+# # -------------------------------
+# if page == "Summarize by Keyword":
+#     st.title("🔹 Summarize by Keyword")
+#     st.write(
+#         "Enter a keyword and optionally custom instructions for summarization. "
+#         "The app will summarize top 10 search results."
+#     )
+#     keyword = st.text_input("Enter Keyword")
+#     custom_instr_kw = st.text_area("Custom Instructions (Optional)", "", height=50)
+#     generate_kw_btn = st.button("Generate Summaries (Keyword)")
 
-    if generate_kw_btn:
-        if not keyword.strip():
-            st.error("❌ Please enter a keyword.")
-        else:
-            urls = get_top_urls_from_keyword(keyword, num_results=10)
-            if not urls:
-                st.error("❌ No URLs found for this keyword.")
-            else:
-                all_summaries = []
-                for idx, url in enumerate(urls, start=1):
-                    with st.expander(f"🔹 URL {idx}: {url}", expanded=True):
-                        text = get_and_preprocess_text(url)
-                        if not text:
-                            st.error("❌ Extraction failed")
-                            all_summaries.append({"URL": url, "Summary": "Extraction failed"})
-                            continue
+#     if generate_kw_btn:
+#         if not keyword.strip():
+#             st.error("❌ Please enter a keyword.")
+#         else:
+#             urls = get_top_urls_from_keyword(keyword, num_results=10)
+#             if not urls:
+#                 st.error("❌ No URLs found for this keyword.")
+#             else:
+#                 all_summaries = []
+#                 for idx, url in enumerate(urls, start=1):
+#                     with st.expander(f"🔹 URL {idx}: {url}", expanded=True):
+#                         text = get_and_preprocess_text(url)
+#                         if not text:
+#                             st.error("❌ Extraction failed")
+#                             all_summaries.append({"URL": url, "Summary": "Extraction failed"})
+#                             continue
 
-                        st.text_area("Extracted Text", text, height=200, key=f"kw_extracted_text_{idx}")
-                        save_extracted_text(text, filename=f"kw_extracted_article_{idx}")
+#                         st.text_area("Extracted Text", text, height=200, key=f"kw_extracted_text_{idx}")
+#                         save_extracted_text(text, filename=f"kw_extracted_article_{idx}")
 
-                        summary = summarize_text(text, custom_instructions=custom_instr_kw)
-                        st.text_area("Summary", summary, height=150, key=f"kw_summary_text_{idx}")
-                        save_text_to_file(summary, prefix=f"kw_summary_{idx}")
-                        all_summaries.append({"URL": url, "Summary": summary})
+#                         summary = summarize_text(text, custom_instructions=custom_instr_kw)
+#                         st.text_area("Summary", summary, height=150, key=f"kw_summary_text_{idx}")
+#                         save_text_to_file(summary, prefix=f"kw_summary_{idx}")
+#                         all_summaries.append({"URL": url, "Summary": summary})
 
-                if all_summaries:
-                    combined_text = "\n\n".join([f"URL: {s['URL']}\nSummary: {s['Summary']}\n{'-'*80}" for s in all_summaries])
-                    st.download_button("📥 Download All Summaries", combined_text, "keyword_summaries.txt", "text/plain")
+#                 if all_summaries:
+#                     combined_text = "\n\n".join([f"URL: {s['URL']}\nSummary: {s['Summary']}\n{'-'*80}" for s in all_summaries])
+#                     st.download_button("📥 Download All Summaries", combined_text, "keyword_summaries.txt", "text/plain")
