@@ -66,7 +66,7 @@ This project is ideal for researchers, students, and professionals who need to q
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/AkshayBasutkar/Web_Summary.git
+git clone https://github.com/Lohith-07-coder/Website_Summary.git
 cd Web_Summary
 ```
 
