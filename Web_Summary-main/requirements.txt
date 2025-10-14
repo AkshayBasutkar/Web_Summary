@@ -1,0 +1,26 @@
+# Web framework
+streamlit>=1.25.0
+
+# Text extraction
+trafilatura>=1.6.3
+
+# AI summarization
+google-generativeai>=0.4.1
+
+# Google Custom Search
+google-api-python-client>=2.100.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Text preprocessing
+regex>=2023.13.1
+
+# Logging (optional, built-in logging can be used)
+loguru>=0.7.0
+
+# HTML parsing (if needed)
+beautifulsoup4>=4.12.2
+
+# HTTP requests
+requests>=2.31.0

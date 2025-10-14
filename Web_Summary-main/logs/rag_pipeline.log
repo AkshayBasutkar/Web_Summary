@@ -1,0 +1,453 @@
+2025-10-11 02:12:21 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:12:21 | INFO | ✅ Gemini API key configured successfully.
+2025-10-11 02:13:43 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:13:43 | INFO | ✅ Gemini API key configured successfully.
+2025-10-11 02:13:43 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:13:43 | INFO | 🚀 Starting RAG Summarization Pipeline
+2025-10-11 02:13:57 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:13:57 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:13:57 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:13:57 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:13:57 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:13:57 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:13:57 | INFO | Extracted text length: 10642 characters
+2025-10-11 02:13:57 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2025-10-11_02-13-57.txt
+2025-10-11 02:13:57 | INFO | 📝 Summarizing text using model: facebook/bart-large-cnn, type: concise
+2025-10-11 02:13:58 | ERROR | Error during summarization: 400 * GenerateContentRequest.model: unexpected model name format
+Traceback (most recent call last):
+  File "C:\Users\aksha\Projects\summarizer\modules\summarizer.py", line 59, in summarize_text
+    response = model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 * GenerateContentRequest.model: unexpected model name format
+
+2025-10-11 02:13:58 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2025-10-11_02-13-58.txt
+2025-10-11 02:13:58 | INFO | ✅ Pipeline completed successfully.
+2025-10-11 02:14:46 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:14:46 | INFO | ✅ Gemini API key configured successfully.
+2025-10-11 02:14:46 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:14:46 | INFO | 🚀 Starting RAG Summarization Pipeline
+2025-10-11 02:14:52 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:14:53 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:14:53 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:14:53 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:14:53 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:14:53 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:14:53 | INFO | Extracted text length: 10642 characters
+2025-10-11 02:14:53 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2025-10-11_02-14-53.txt
+2025-10-11 02:14:53 | INFO | 📝 Summarizing text using model: facebook/bart-large-cnn, type: concise
+2025-10-11 02:14:54 | ERROR | Error during summarization: 400 * GenerateContentRequest.model: unexpected model name format
+Traceback (most recent call last):
+  File "C:\Users\aksha\Projects\summarizer\modules\summarizer.py", line 59, in summarize_text
+    response = model.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\AppData\Local\Programs\Python\Python312\Lib\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 * GenerateContentRequest.model: unexpected model name format
+
+2025-10-11 02:14:54 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2025-10-11_02-14-54.txt
+2025-10-11 02:14:54 | INFO | ✅ Pipeline completed successfully.
+2025-10-11 02:16:14 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:16:14 | INFO | ✅ Gemini API key configured successfully.
+2025-10-11 02:16:14 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:16:14 | INFO | 🚀 Starting RAG Summarization Pipeline
+2025-10-11 02:16:25 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:16:26 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:16:26 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:16:26 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:16:26 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:16:26 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:16:26 | INFO | Extracted text length: 10642 characters
+2025-10-11 02:16:26 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2025-10-11_02-16-26.txt
+2025-10-11 02:16:26 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:16:37 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:16:38 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2025-10-11_02-16-37.txt
+2025-10-11 02:16:38 | INFO | ✅ Pipeline completed successfully.
+2025-10-11 02:18:13 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:18:13 | INFO | ✅ Gemini API key configured successfully.
+2025-10-11 02:18:13 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:18:24 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:18:26 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:18:27 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:18:27 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:18:28 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:18:28 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:18:28 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:18:28 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:18:28 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:18:28 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2025-10-11_02-18-28.txt
+2025-10-11 02:18:28 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: key_points
+2025-10-11 02:18:38 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:18:38 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2025-10-11_02-18-38.txt
+2025-10-11 02:18:55 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:18:59 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:19:01 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:19:02 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:19:02 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:19:02 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:19:02 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:19:02 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:19:02 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:19:02 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:19:02 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2025-10-11_02-19-02.txt
+2025-10-11 02:19:02 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: detailed
+2025-10-11 02:19:24 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:19:24 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2025-10-11_02-19-24.txt
+2025-10-11 02:20:15 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:20:15 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:20:15 | INFO | 🌐 Fetching content from URL: https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
+2025-10-11 02:20:16 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:20:16 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:20:16 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:20:16 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:20:16 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
+2025-10-11 02:20:16 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2025-10-11_02-20-16.txt
+2025-10-11 02:20:16 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: detailed
+2025-10-11 02:20:32 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:20:32 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2025-10-11_02-20-32.txt
+2025-10-11 02:23:13 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:23:13 | INFO | ✅ Gemini API key configured successfully.
+2025-10-11 02:23:13 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:23:26 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:23:36 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:23:42 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:23:42 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:23:42 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:23:42 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:23:42 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:23:42 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:23:42 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:23:42 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:23:42 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-23-42.txt
+2025-10-11 02:23:42 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:23:53 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:23:53 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-23-53.txt
+2025-10-11 02:23:53 | INFO | 🌐 Fetching content from URL: https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
+2025-10-11 02:23:53 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:23:53 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:23:53 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:23:53 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:23:53 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
+2025-10-11 02:23:53 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2_2025-10-11_02-23-53.txt
+2025-10-11 02:23:53 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:24:05 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:24:05 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2_2025-10-11_02-24-05.txt
+2025-10-11 02:26:01 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:26:01 | INFO | ✅ Gemini API key configured successfully.
+2025-10-11 02:26:01 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:26:15 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:26:21 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:26:21 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:26:21 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:26:22 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:26:22 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:26:22 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:26:22 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:26:22 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:26:22 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-26-22.txt
+2025-10-11 02:26:22 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:26:33 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:26:33 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-26-33.txt
+2025-10-11 02:26:33 | INFO | 🌐 Fetching content from URL: https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
+2025-10-11 02:26:33 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:26:33 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:26:33 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:26:33 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:26:33 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
+2025-10-11 02:26:33 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2_2025-10-11_02-26-33.txt
+2025-10-11 02:26:33 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:26:40 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:26:42 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:26:42 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:26:42 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:26:43 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:26:43 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:26:43 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:26:43 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:26:43 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:26:43 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-26-43.txt
+2025-10-11 02:26:43 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:26:53 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:26:53 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-26-53.txt
+2025-10-11 02:26:53 | INFO | 🌐 Fetching content from URL: https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
+2025-10-11 02:26:53 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:26:53 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:26:53 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:26:53 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:26:53 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
+2025-10-11 02:26:53 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2_2025-10-11_02-26-53.txt
+2025-10-11 02:26:53 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:27:03 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:27:03 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2_2025-10-11_02-27-03.txt
+2025-10-11 02:28:21 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:28:21 | INFO | ✅ Gemini API key configured successfully.
+2025-10-11 02:28:21 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:28:48 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:28:48 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:28:48 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:28:48 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:28:48 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:28:48 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:28:48 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:28:48 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:28:48 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-28-48.txt
+2025-10-11 02:28:48 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: detailed
+2025-10-11 02:29:10 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:29:10 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-29-10.txt
+2025-10-11 02:29:10 | INFO | 🌐 Fetching content from URL: https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
+2025-10-11 02:29:10 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:29:10 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:29:10 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:29:10 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:29:10 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.geeksforgeeks.org/python/python-programming-language-tutorial/
+2025-10-11 02:29:10 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2_2025-10-11_02-29-10.txt
+2025-10-11 02:29:10 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:29:22 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:29:22 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2_2025-10-11_02-29-22.txt
+2025-10-11 02:29:54 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:30:09 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:30:09 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:30:10 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:30:10 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:30:10 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:30:10 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:30:10 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:30:10 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-30-10.txt
+2025-10-11 02:30:10 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: detailed
+2025-10-11 02:30:33 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:30:33 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-30-33.txt
+2025-10-11 02:30:33 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:30:33 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:30:33 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:30:33 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:30:33 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:30:33 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:30:55 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:30:55 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:30:55 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:30:56 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:30:56 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:30:56 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:30:56 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:30:56 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:30:56 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-30-56.txt
+2025-10-11 02:30:56 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: detailed
+2025-10-11 02:31:12 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:31:12 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-31-12.txt
+2025-10-11 02:31:12 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:31:13 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:31:13 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:31:13 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:31:13 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:31:13 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:31:24 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:31:32 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:31:36 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:31:36 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:31:36 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:31:36 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:31:36 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:31:36 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:31:36 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:31:36 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-31-36.txt
+2025-10-11 02:31:36 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: detailed
+2025-10-11 02:31:55 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:31:55 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-31-55.txt
+2025-10-11 02:31:55 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:31:55 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:31:55 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:31:55 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:31:55 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:31:55 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:33:14 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:33:14 | INFO | ✅ Gemini API key configured successfully.
+2025-10-11 02:33:14 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:33:18 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:33:18 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:33:18 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:33:19 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:33:19 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:33:19 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:33:19 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:33:19 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:33:20 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-33-20.txt
+2025-10-11 02:33:20 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: detailed
+2025-10-11 02:33:39 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:33:39 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-33-39.txt
+2025-10-11 02:33:39 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:33:39 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:33:39 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:33:39 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:33:39 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:33:39 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:37:03 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:37:03 | INFO | ✅ Gemini API key configured successfully.
+2025-10-11 02:37:03 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:37:15 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:37:15 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:37:15 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:37:16 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:37:16 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:37:16 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:37:16 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:37:16 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:37:16 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-37-16.txt
+2025-10-11 02:37:16 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: detailed
+2025-10-11 02:37:41 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:37:41 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-37-41.txt
+2025-10-11 02:37:41 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:37:41 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:37:41 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:37:41 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:37:41 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:37:41 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:37:41 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2_2025-10-11_02-37-41.txt
+2025-10-11 02:37:41 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:37:54 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:37:54 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2_2025-10-11_02-37-54.txt
+2025-10-11 02:37:54 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:37:54 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:37:54 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:37:54 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:37:54 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:37:54 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:37:54 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_3_2025-10-11_02-37-54.txt
+2025-10-11 02:37:54 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: key_points
+2025-10-11 02:38:04 | INFO | ✅ Summarization completed successfully.
+2025-10-11 02:38:04 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_3_2025-10-11_02-38-04.txt
+2025-10-11 02:50:22 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:50:41 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:50:41 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:50:41 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:50:41 | WARNING | Retrying (Retry(total=1, connect=0, read=None, redirect=2, status=None)) after connection broken by 'RemoteDisconnected('Remote end closed connection without response')': /news/articles/cly17834524o
+2025-10-11 02:50:42 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:50:42 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:50:42 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:50:42 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:50:42 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:50:42 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-50-42.txt
+2025-10-11 02:50:42 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: detailed
+2025-10-11 02:50:43 | ERROR | ❌ Error during summarization: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-10-11 02:50:43 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-50-43.txt
+2025-10-11 02:50:43 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:50:43 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:50:43 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:50:43 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:50:43 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:50:43 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:50:43 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2_2025-10-11_02-50-43.txt
+2025-10-11 02:50:43 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:50:44 | ERROR | ❌ Error during summarization: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-10-11 02:50:44 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2_2025-10-11_02-50-44.txt
+2025-10-11 02:50:44 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:50:44 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:50:44 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:50:44 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:50:44 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:50:44 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:50:44 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_3_2025-10-11_02-50-44.txt
+2025-10-11 02:50:44 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: key_points
+2025-10-11 02:50:44 | ERROR | ❌ Error during summarization: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-10-11 02:50:44 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_3_2025-10-11_02-50-44.txt
+2025-10-11 02:51:44 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:51:55 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:51:55 | INFO | 🧩 Logging initialized successfully.
+2025-10-11 02:51:55 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:51:56 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:51:56 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:51:56 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:51:56 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:51:56 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:51:56 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_1_2025-10-11_02-51-56.txt
+2025-10-11 02:51:56 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: detailed
+2025-10-11 02:52:16 | INFO | ✅ Summarization completed. Summary length: 6395 characters
+2025-10-11 02:52:16 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_1_2025-10-11_02-52-16.txt
+2025-10-11 02:52:16 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:52:16 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:52:16 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:52:16 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:52:16 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:52:16 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:52:16 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_2_2025-10-11_02-52-16.txt
+2025-10-11 02:52:16 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: concise
+2025-10-11 02:52:28 | INFO | ✅ Summarization completed. Summary length: 1212 characters
+2025-10-11 02:52:28 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_2_2025-10-11_02-52-28.txt
+2025-10-11 02:52:28 | INFO | 🌐 Fetching content from URL: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:52:28 | INFO | 🧹 Starting basic text cleaning...
+2025-10-11 02:52:28 | INFO | ✅ Text cleaning completed.
+2025-10-11 02:52:28 | INFO | 🧩 Starting advanced text preprocessing...
+2025-10-11 02:52:28 | INFO | ✅ Advanced preprocessing completed.
+2025-10-11 02:52:28 | INFO | ✅ Successfully extracted and preprocessed text from: https://www.bbc.com/news/articles/cly17834524o
+2025-10-11 02:52:28 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\documents\extracted_article_3_2025-10-11_02-52-28.txt
+2025-10-11 02:52:28 | INFO | 📝 Summarizing text using model: gemini-2.5-flash, type: key_points
+2025-10-11 02:52:44 | INFO | ✅ Summarization completed. Summary length: 3426 characters
+2025-10-11 02:52:44 | INFO | 📝 File saved successfully: C:\Users\aksha\Projects\summarizer\data\outputs\summary_3_2025-10-11_02-52-44.txt
