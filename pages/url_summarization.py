@@ -1,5 +1,5 @@
 import streamlit as st
-from modules.extractor import get_and_preprocess_text
+from modules.new_extractor import get_and_preprocess_text
 from modules.summarizer import summarize_text
 
 def app():

@@ -21,6 +21,8 @@ loguru>=0.7.0
 
 # HTML parsing (if needed)
 beautifulsoup4>=4.12.2
+lxml>=4.9.0
+readability-lxml>=0.8.1
 
 # HTTP requests
 requests>=2.31.0

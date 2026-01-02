@@ -20,7 +20,7 @@ def summarize_text(text: str, gemini_api_key: str, summary_type: str = "Short Su
     try:
         # Configure Gemini API dynamically
         genai.configure(api_key=gemini_api_key)
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = genai.GenerativeModel("gemini-flash-lite-latest")
         logger.info(f"🧠 Using Gemini model for {summary_type} summarization")
 
         # Define prompt based on summary type
